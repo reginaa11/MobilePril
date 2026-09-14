@@ -9,6 +9,7 @@ fun main() {
         2 -> runTask2()
         3 -> runTask3()
         4 -> runTask4()
+        5 -> runTask5()
         else -> println("Задание пока не реализовано")
     }
 }
