@@ -6,6 +6,7 @@ fun main() {
 
     when (choice) {
         1 -> runTask1()
+        2 -> runTask2()
         else -> println("Задание пока не реализовано")
     }
 }
