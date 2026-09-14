@@ -1,13 +1,11 @@
 package org.example
 
 fun main() {
-    println("Введите целое положительное число:")
-    val input = readln()
+    println("Введите номер задания (1–10):")
+    val choice = readln().toInt()
 
-    val firstDigit = input.first().digitToInt()
-    val lastDigit = input.last().digitToInt()
-
-    println("Первая цифра: $firstDigit")
-    println("Последняя цифра: $lastDigit")
-    println("Сумма первой и последней цифры: ${firstDigit + lastDigit}")
+    when (choice) {
+        1 -> runTask1()
+        else -> println("Задание пока не реализовано")
+    }
 }
