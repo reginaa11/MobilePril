@@ -26,14 +26,14 @@ tasks.named<JavaExec>("run") {
     standardInput = System.`in`
 }
 
-tasks.withType<JavaExec> {
-    systemProperty("file.encoding", "UTF-8")
-}
-
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.withType<JavaExec> {
+    jvmArgs("-Dfile.encoding=UTF-8", "-Dstdout.encoding=UTF-8", "-Dstdin.encoding=UTF-8")
 }
