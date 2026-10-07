@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Введите текст"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/button_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Логирование Log"
+        android:textSize="16sp"
+        android:padding="14dp"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/button_timber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Логирование Timber"
+        android:textSize="16sp"
+        android:padding="14dp" />
+
+</LinearLayout>
