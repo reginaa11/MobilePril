@@ -3,14 +3,20 @@ package com.example.firstapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -29,31 +35,41 @@ class MainActivity : ComponentActivity() {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
                 ) {
-
-                    Text(
-                        text = "Симоненко Регина ФИТ-241",
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center
+                    // 1. EditText (поле ввода)
+                    var text by remember { mutableStateOf("Симоненко Регина Фит-241") }
+                    OutlinedTextField(
+                        value = text,
+                        onValueChange = { text = it },
+                        label = { Text("Введите текст") },
+                        modifier = Modifier.fillMaxWidth()
                     )
 
-                    Spacer(modifier = Modifier.height(16.dp))
+                    Spacer(modifier = Modifier.height(24.dp))
 
+                    // 2. ImageView
+                    Box(
+                        modifier = Modifier
+                            .size(100.dp)
+                            .clip(CircleShape)
+                            .background(Color(0xFF3DDC84)),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "Android",
+                            color = Color.White,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
 
-                    Text(
-                        text = "Если б мишки были пчелами,\nТо они бы нипочём\nНикогда и не подумали\nТак высоко строить дом!",
-                        fontSize = 16.sp,
-                        textAlign = TextAlign.Center
-                    )
+                    Spacer(modifier = Modifier.height(24.dp))
 
-                    Spacer(modifier = Modifier.height(16.dp))
-
-
-                    Text(
-                        text = "If bears were bees,\nThen they would not care\nNever thought\nBuilding a house so high!",
-                        fontSize = 16.sp,
-                        textAlign = TextAlign.Center
-                    )
+                    // 3. Button
+                    Button(
+                        onClick = { },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text(text = "OK", fontSize = 18.sp)
+                    }
                 }
             }
         }
